@@ -48,6 +48,12 @@
             x[index - 1].style.display = 'block';
 
         }
+
+        autoSlide();
+        function autoSlide() {
+            plusIndex(1);
+            setTimeout(autoSlide, 2000);
+        }
     </script>
 
 </body>
