@@ -28,32 +28,59 @@
 
 
     <script>
-        var index = 1;
+        var index1 = 1;
+        var index2;
+        var index3;
 
         function plusIndex(n) {
-            index = index + n;
-            showImage(index);
+            index1 = index1 + n;
+            showImage(index1);
         }
 
-        showImage(1);
+        showImage(index1);
         function showImage(n) {
             var i;
             var x = document.getElementsByClassName('slides');
-            if (n > x.length) { index = 1 };
-            if (n < 1) { index = x.length };
+            if (n > x.length) { index1 = 1 };
+            if (n < 1) { index1 = x.length };
+            // console.log(index1);
+            var index2 = index1 + 1;
+            // var index3 = index2 + 1;
+
+            if (index2 > x.length) { index2 = 1 };
+            if (index2 < 1) { index2 = x.length };
+            // console.log(index2);
+
+            var index3 = index2 + 1;
+            if (index3 > x.length) { index3 = 1 };
+            if (index3 < 1) { index3 = x.length };
+            // console.log(index3);
 
             for (i = 0; i < x.length; i++) {
                 x[i].style.display = 'none';
             }
-            x[index - 1].style.display = 'block';
+
+            x[index1 - 1].style.display = 'block';
+            x[index2 - 1].style.display = 'block';
+            x[index3 - 1].style.display = 'block';
+            x[index1 - 1].style.left = '0%'
+            x[index2 - 1].style.left = '33.3%'
+            x[index3 - 1].style.left = '66.6%'
+
+            // console.log(x[index1 - 1], x[index2 - 1], x[index3 - 1]);
+
+            // x[index + 1].style.display = 'block';
+            // x[index + 1].style.left = '66.6%'
+            // x[index + 2].style.display = 'block';
+            // x[index + 2].style.left = '75%'
 
         }
 
-        autoSlide();
-        function autoSlide() {
-            plusIndex(1);
-            setTimeout(autoSlide, 2000);
-        }
+        // autoSlide();
+        // function autoSlide() {
+        //     plusIndex(1);
+        //     setTimeout(autoSlide, 2000);
+        // }
     </script>
 
 </body>
