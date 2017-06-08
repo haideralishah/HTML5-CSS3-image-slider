@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,49 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div id="container">
-
+        <img src="images/1.jpg" alt="" class="slides">
+        <img src="images/2.jpg" alt="" class="slides">
+        <img src="images/3.jpg" alt="" class="slides">
+        <img src="images/4.jpg" alt="" class="slides">
+        <img src="images/5.jpg" alt="" class="slides">
+        <img src="images/6.jpg" alt="" class="slides">
+        <img src="images/7.jpg" alt="" class="slides">
+        <button class="btn" id="btn1" onClick='plusIndex(-1)'>&#10094</button>
+        <button class="btn" id="btn2" onClick='plusIndex(1)'>&#10095</button>
     </div>
-    
+
+
+
+
+
+
+    <script>
+        var index = 1;
+
+        function plusIndex(n) {
+            index = index + n;
+            showImage(index);
+        }
+
+        showImage(1);
+        function showImage(n) {
+            var i;
+            var x = document.getElementsByClassName('slides');
+            if (n > x.length) { index = 1 };
+            if (n < 1) { index = x.length };
+
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = 'none';
+            }
+            x[index - 1].style.display = 'block';
+
+        }
+    </script>
+
 </body>
+
+
 </html>
