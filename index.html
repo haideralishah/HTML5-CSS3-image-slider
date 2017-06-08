@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body onresize="setSliderSize()">
     <div id="container">
         <img src="images/1.jpg" alt="" class="slides">
         <img src="images/2.jpg" alt="" class="slides">
@@ -28,6 +28,18 @@
 
 
     <script>
+        // window.onresize = setSliderSize;
+
+        setSliderSize();
+        function setSliderSize() {
+            var screenHeight = window.innerHeight;
+            var requiredHeight = screenHeight / 3;
+            document.getElementById('container').style.height = requiredHeight + 'px';
+            document.getElementById('btn1').style.top = requiredHeight / 2 - 14 + 'px';
+            document.getElementById('btn2').style.top = requiredHeight / 2 - 14 + 'px';
+        }
+
+
         var index1 = 1;
         var index2;
         var index3;
