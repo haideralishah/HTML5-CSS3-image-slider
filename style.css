@@ -32,6 +32,15 @@
     box-shadow: -10px 0px 20px 0px #000;
 }
 
+
+#container>#btn1:active, #container>#btn1:focus{
+    outline:0;
+}
+
+#container>#btn2:active, #container>#btn2:focus{
+    outline:0;
+}
+
 #container>#btn2{
     position: relative;
     float: right;
